@@ -12,8 +12,8 @@ vim.g.maplocalleader = ' '
 -- See `:help vim.keymap.set()`
 km.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 km.set( 'n', '<leader>p', vim.cmd.Ex)
-km.set( 'n', 'C-d', '<C-d>zz')
-km.set( 'n', 'C-u', '<C-u>zz')
+km.set( 'n', '<C-d>', '<C-d>zz')
+km.set( 'n', '<C-u>', '<C-u>zz')
 km.set( 'n', 'n', 'nzzzv')
 km.set( 'n', 'N', 'Nzzzv')
 km.set( 'n', '<leader>v', ':vs<CR><C-w>l:Ex<CR>')
@@ -21,6 +21,7 @@ km.set( 'n', '<leader>h', '<C-w>h')
 km.set( 'n', '<leader>j', '<C-w>j')
 km.set( 'n', '<leader>k', '<C-w>k')
 km.set( 'n', '<leader>l', '<C-w>l')
+km.set( 'n', '<C-TAB>', ':bprevious<CR>' )
 km.set({ 'n', 'v' }, '<leader>n', ':noh<CR>')
 
 -- Diagnostic keymaps
