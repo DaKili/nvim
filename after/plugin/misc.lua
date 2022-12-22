@@ -42,3 +42,6 @@ require('gitsigns').setup {
   },
 }
 
+-- Enable Fidget
+require('fidget').setup()
+
