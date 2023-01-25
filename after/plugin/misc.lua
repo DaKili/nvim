@@ -42,6 +42,9 @@ require('gitsigns').setup {
   },
 }
 
+-- Enable Autopairs
+require('nvim-autopairs').setup()
+
 -- Enable Fidget
 require('fidget').setup()
 
