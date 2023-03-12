@@ -9,6 +9,10 @@ vim.opt.scrolloff = 20
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+<<<<<<< HEAD
+vim.opt.smartindent = true
+=======
+>>>>>>> 854f0757963fb6bfe822476d1022f3292909f8e7
 vim.opt.expandtab = true
 vim.opt.incsearch = true
 vim.opt.cursorline = true
