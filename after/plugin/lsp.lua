@@ -16,5 +16,5 @@ lsp.set_preferences({
   }
 })
 
-lsp.ensure_installed({ 'clangd', 'pyright', 'tsserver', 'sumneko_lua', 'gopls' })
+lsp.ensure_installed({ 'clangd', 'pyright', 'tsserver', 'lua_ls', 'gopls' })
 lsp.setup()
