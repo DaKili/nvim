@@ -28,9 +28,13 @@ vim.opt.cmdheight = 1
 vim.opt.completeopt = "menuone,noinsert,noselect,preview"
 vim.opt.showmode = false
 vim.opt.pumheight = 10
+vim.opt.listchars = { trail = "·", nbsp = "␣" } -- TODO: Check how this can take effect
 
 -- File handling
 vim.opt.autoread = true
+vim.opt.swapfile = false
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
 
 -- Behavior settings
 vim.opt.errorbells = false
