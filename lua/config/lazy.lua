@@ -38,5 +38,5 @@ require("lazy").setup({
 
 require('config.keybinds')
 require('config.commands')
-require('config.statusline')
+-- require('config.statusline')
 

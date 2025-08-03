@@ -1,4 +1,5 @@
 {
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "mini.statusline": { "branch": "main", "commit": "f6917f4da995d64edf3728b1302dbd5d4561c912" },
   "oxocarbon.nvim": { "branch": "main", "commit": "1dc7b7ea9df60edd9547b667fd1f789ce9f028fb" }
 }
