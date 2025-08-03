@@ -34,4 +34,9 @@ vim.keymap.set("n", "<leader>ff", ":find ", { desc = "Find file" }) -- TODO: Fig
 vim.keymap.set('n', '-', '<cmd>Explore<CR>', { desc = 'Open parent directory in netrw' })
 
 -- Copy to clipboard
-vim.keymap.set('v', '<C-c>', '"+y', { noremap = true })
+vim.keymap.set('v', '<C-c>', '"+y', { noremap = true }, {desc = 'Copy to system clipboard'})
+
+-- Misc
+vim.keymap.set({'n', 'i', 'v'}, '<C-s>', '<Esc>:update<CR>', { desc = 'Save buffer' })
+-- C-w is delete word like in normal text editors
+
