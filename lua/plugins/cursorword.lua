@@ -1,5 +1,5 @@
 return {
     'echasnovski/mini.cursorword',
     version = false,
-    opts = {}
+    opts = { delay = 10 }
 }

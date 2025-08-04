@@ -28,6 +28,7 @@ vim.opt.cmdheight = 1
 vim.opt.completeopt = "menuone,noinsert,noselect,preview"
 vim.opt.showmode = false
 vim.opt.pumheight = 10
+vim.opt.list = true
 vim.opt.listchars = { trail = "·", nbsp = "␣" } -- TODO: Check how this can take effect
 
 -- File handling
@@ -52,4 +53,3 @@ vim.opt.wildignore:append({ "*.o", "*.obj"})
 vim.g.netrw_banner = 0
 vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
 -- vim.g.netrw_liststyle = 3 -- show tree style directory
-
