@@ -40,3 +40,5 @@ vim.keymap.set('v', '<C-c>', '"+y', { noremap = true }, {desc = 'Copy to system 
 vim.keymap.set({'n', 'i', 'v'}, '<C-s>', '<Esc>:update<CR>', { desc = 'Save buffer' })
 -- C-w is delete word like in normal text editors
 
+-- Plugins
+vim.keymap.set('n', '<leader>cf', function() require('conform').format() end, {desc = 'Format current file'})
