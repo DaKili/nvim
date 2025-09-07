@@ -5,6 +5,8 @@ vim.opt.cursorline = true
 vim.opt.wrap = false
 vim.opt.scrolloff = 15
 vim.opt.sidescrolloff = 8
+vim.loader.enable()
+vim.opt.updatetime = 200
 
 -- Indentation
 vim.opt.tabstop = 4

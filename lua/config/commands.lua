@@ -1,6 +1,6 @@
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup,
+  -- group = augroup,
   callback = function()
     vim.highlight.on_yank()
   end,
@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Create directories when saving files
 vim.api.nvim_create_autocmd("BufWritePre", {
-  group = augroup,
+  -- group = augroup,
   callback = function()
     local dir = vim.fn.expand('<afile>:p:h')
     if vim.fn.isdirectory(dir) == 0 then
