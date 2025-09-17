@@ -90,6 +90,11 @@ return {
             ensure_installed = {
                 'lua_ls',
                 'angularls',
+                'ts_ls',
+                'html',
+                'cssls',
+                'tailwindcss',
+                'eslint',
             },
             automatic_enable = true, -- Mason-LSPConfig v2 auto-enables servers by default
         })
