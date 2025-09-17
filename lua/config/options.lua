@@ -7,6 +7,7 @@ vim.opt.scrolloff = 15
 vim.opt.sidescrolloff = 8
 vim.loader.enable()
 vim.opt.updatetime = 200
+vim.opt.title = true
 
 -- Indentation
 vim.opt.tabstop = 4
@@ -23,10 +24,11 @@ vim.opt.smartcase = true        -- Case sensitive search if uppercase in search
 vim.opt.incsearch = true
 
 -- Visual settings
+vim.opt.showcmd = true
+vim.opt.cmdheight = 0
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = "120"
 vim.opt.showmatch = true
-vim.opt.cmdheight = 1
 vim.opt.completeopt = "menuone,noinsert,noselect,preview"
 vim.opt.showmode = false
 vim.opt.pumheight = 10
@@ -49,7 +51,7 @@ vim.opt.encoding = "UTF-8"
 -- Command-line completion
 vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full,full"
-vim.opt.wildignore:append({ "*.o", "*.obj"})
+vim.opt.wildignore:append({ "*.o", "*.obj" })
 
 -- Netrw
 vim.g.netrw_banner = 0
