@@ -8,6 +8,7 @@ vim.opt.sidescrolloff = 8
 vim.loader.enable()
 vim.opt.updatetime = 200
 vim.opt.title = true
+vim.opt.titlestring = "Neovim"
 
 -- Indentation
 vim.opt.tabstop = 4
