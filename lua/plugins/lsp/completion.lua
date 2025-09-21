@@ -8,23 +8,22 @@ return {
         -- C-n/C-p or Up/Down: Select next/previous item
         -- C-e: Hide menu
         -- C-k: Toggle signature help (if signature.enabled = true)
-        keymap = { preset = 'super-tab' },
-
+        keymap = {
+            preset = 'super-tab',
+            ['<C-k>'] = { 'select_prev', 'fallback' },
+            ['<C-j>'] = { 'select_next', 'fallback' },
+        },
         appearance = {
             nerd_font_variant = 'mono',
         },
-
         completion = {
             documentation = { auto_show = true },
             ghost_text = { enabled = true },
         },
-
         signature = { enabled = true },
-
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
-        cmdline = { sources = {} }
 
     },
     opts_extend = { 'sources.default' },
