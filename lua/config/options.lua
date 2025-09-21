@@ -52,8 +52,8 @@ vim.opt.encoding = 'UTF-8'
 
 -- Command-line completion
 vim.opt.wildmenu = true
-vim.opt.wildmode = 'longest:full,full'
-vim.opt.wildignore:append({ '*.o', '*.obj' })
+vim.opt.wildmode = 'full'
+-- vim.opt.wildignore:append({ '*.o', '*.obj', '.git' })
 
 -- Netrw
 vim.g.netrw_banner = 0
