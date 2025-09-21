@@ -1,15 +1,14 @@
 return {
     'neovim/nvim-lspconfig',
     dependencies = {
-        { 'mason-org/mason.nvim', opts = {} },
-        'mason-org/mason-lspconfig.nvim',
-        'WhoIsSethDaniel/mason-tool-installer.nvim',
         { 'j-hui/fidget.nvim', opts = {} },
         'saghen/blink.cmp',
     },
     config = function()
-        -- Setup capabilities for blink.cmp
         local capabilities = require('blink.cmp').get_lsp_capabilities()
+        vim.lsp.config('*', {
+            capabilities = capabilities,
+        })
 
         -- LSP Attach autocommand
         vim.api.nvim_create_autocmd('LspAttach', {
@@ -83,37 +82,8 @@ return {
                 source = 'if_many',
                 spacing = 2,
             },
-            update_in_insert = false,
         })
 
-        require('mason-lspconfig').setup({
-            ensure_installed = {
-                'lua_ls',
-                'angularls',
-                'ts_ls',
-                'html',
-                'cssls',
-                'tailwindcss',
-                'eslint',
-            },
-            automatic_enable = true, -- Mason-LSPConfig v2 auto-enables servers by default
-        })
-
-        -- Ensure tools are installed
-        require('mason-tool-installer').setup({
-            ensure_installed = {
-                'stylua',
-                'prettierd',
-                'prettier',
-            }
-        })
-
-        -- Global LSP settings (applies to all clients)
-        vim.lsp.config('*', {
-            capabilities = capabilities,
-        })
-
-        -- Configure individual LSP servers using the new vim.lsp.config API
         vim.lsp.config('lua_ls', {
             settings = {
                 Lua = {
@@ -135,8 +105,6 @@ return {
                 },
             },
         })
-
-        vim.lsp.config('angularls', {})
-
     end,
 }
+
