@@ -25,6 +25,7 @@ vim.opt.smartcase = true -- Case sensitive search if uppercase in search
 vim.opt.incsearch = true
 
 -- Visual settings
+vim.opt.winborder = "single"
 vim.opt.showcmd = true
 vim.opt.cmdheight = 0
 vim.opt.termguicolors = true
