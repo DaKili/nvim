@@ -7,6 +7,12 @@ return {
     ---@type AutoSession.Config
     opts = {
         suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
-        -- log_level = 'debug',
     },
+    keys = {
+        {
+            '<leader>rs',
+            ':AutoSession search<CR>',
+            desc = 'Format current file',
+        }
+    }
 }

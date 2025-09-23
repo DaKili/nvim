@@ -21,7 +21,6 @@ vim.opt.autoindent = true
 -- Search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true -- Case sensitive search if uppercase in search
--- vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- Visual settings
@@ -52,7 +51,6 @@ vim.opt.encoding = 'UTF-8'
 -- Command-line completion
 vim.opt.wildmenu = true
 vim.opt.wildmode = 'full'
--- vim.opt.wildignore:append({ '*.o', '*.obj', '.git' })
 
 -- Netrw
 vim.g.netrw_banner = 0

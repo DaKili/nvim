@@ -33,6 +33,10 @@ vim.keymap.set('v', '>', '>gv', { desc = 'Indent right and reselect' })
 -- Code navigation
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-,>', '<C-O>', { desc = 'Jump one back in list' })
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-.>', '<C-I>', { desc = 'Jump one back in list' })
+vim.keymap.set('n', '<Esc>', function()
+    vim.cmd('nohlsearch')
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', false)
+end, { desc = 'Clear search highlighting' })
 
 -- Netrw
 vim.keymap.set('n', '-', '<cmd>Explore<CR>', { desc = 'Open parent directory in netrw' })
@@ -43,8 +47,3 @@ vim.keymap.set('v', '<C-c>', '"+y', { noremap = true, desc = 'Copy to system cli
 -- Misc
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<Esc>:update<CR>', { desc = 'Save buffer' })
 -- C-w is delete word like in normal text editors
-
--- Plugins
-vim.keymap.set('n', '<leader>cf', function()
-    require('conform').format()
-end, { desc = 'Format current file' })

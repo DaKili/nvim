@@ -11,4 +11,13 @@ return {
             css = { 'prettierd', 'prettier', stop_after_first = true },
         },
     },
+    keys = {
+        {
+            '<leader>cf',
+            function()
+                require('conform').format({ async = true })
+            end,
+            desc = 'Format current file',
+        },
+    },
 }
