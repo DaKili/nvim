@@ -31,8 +31,8 @@ vim.keymap.set('v', '<', '<gv', { desc = 'Indent left and reselect' })
 vim.keymap.set('v', '>', '>gv', { desc = 'Indent right and reselect' })
 
 -- Code navigation
-vim.keymap.set({ 'n', 'v', 'i' }, '<C-,>', '<C-O>', { desc = 'Jump one back in list' })
-vim.keymap.set({ 'n', 'v', 'i' }, '<C-.>', '<C-I>', { desc = 'Jump one back in list' })
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-h>', '<C-O>', { desc = 'Jump one back in list' })
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-l>', '<C-I>', { desc = 'Jump one back in list' })
 vim.keymap.set('n', '<Esc>', function()
     vim.cmd('nohlsearch')
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', false)
@@ -46,4 +46,5 @@ vim.keymap.set('v', '<C-c>', '"+y', { noremap = true, desc = 'Copy to system cli
 
 -- Misc
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<Esc>:update<CR>', { desc = 'Save buffer' })
+vim.keymap.set('n', '<C-f>', 'za', { desc = 'Toggle fold at cursor' })
 -- C-w is delete word like in normal text editors
