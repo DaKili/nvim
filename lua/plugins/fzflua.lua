@@ -3,10 +3,11 @@ return {
     dependencies = { 'echasnovski/mini.icons' },
     opts = {
         files = {
-            rg_opts = "--color=never --files --hidden -g '!.git' -g '!node_modules'",
+            rg_opts = '--color=never --files --hidden -g "!.git" -g "!node_modules"',
         },
         grep = {
-            rg_opts = "--color=never --hidden -g '!.git' -g '!node_modules'",
+            rg_opts = '--color=never --line-number --hidden -g "!.git" -g "!node_modules"',
+            silent = true,
         },
     },
 
