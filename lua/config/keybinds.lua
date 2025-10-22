@@ -31,8 +31,8 @@ vim.keymap.set('v', '<', '<gv', { desc = 'Indent left and reselect' })
 vim.keymap.set('v', '>', '>gv', { desc = 'Indent right and reselect' })
 
 -- Code navigation
-vim.keymap.set({ 'n', 'v', 'i' }, '<C-,>', '<C-O>', { desc = 'Jump one back in list' })
-vim.keymap.set({ 'n', 'v', 'i' }, '<C-.>', '<C-I>', { desc = 'Jump one back in list' })
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-h>', '<C-O>', { desc = 'Jump one back in list' })
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-l>', '<C-I>', { desc = 'Jump one forward in list' })
 vim.keymap.set('n', '<Esc>', function()
     vim.cmd('nohlsearch')
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', true, false, true), 'n', false)
