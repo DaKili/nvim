@@ -15,6 +15,7 @@ return {
                 'html',
                 'cssls',
                 'tailwindcss',
+                'yamlls'
             },
         })
 
