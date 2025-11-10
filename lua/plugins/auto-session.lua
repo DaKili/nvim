@@ -12,7 +12,7 @@ return {
         {
             '<leader>rs',
             ':AutoSession search<CR>',
-            desc = 'Format current file',
+            desc = 'Search recent sessions',
         }
     }
 }
