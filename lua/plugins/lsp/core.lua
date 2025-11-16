@@ -97,6 +97,15 @@ local function setup_server_configs()
             },
         },
     })
+
+    -- Only load angular if neovim is opened in an angular project.
+    vim.lsp.config('angularls', {
+        root_dir = function(fname)
+            local util = require('lspconfig.util')
+            local root = util.root_pattern('angular.json', 'project.json')(fname)
+            return root
+        end,
+    })
 end
 
 -- Main plugin configuration
