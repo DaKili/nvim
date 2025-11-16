@@ -1,16 +1,18 @@
 return {
     'ibhagwan/fzf-lua',
     dependencies = { 'echasnovski/mini.icons' },
+    config = function()
+        require('fzf-lua').register_ui_select()
+    end,
     opts = {
         files = {
-            rg_opts = '--color=never --files --hidden -g "!.git" -g "!node_modules"',
+            rg_opts = '-i --color=never --files --hidden -g "!.git" -g "!node_modules"',
         },
         grep = {
-            rg_opts = '--color=never --line-number --hidden -g "!.git" -g "!node_modules"',
+            rg_opts = '-i --color=never --line-number --hidden -g "!.git" -g "!node_modules"',
             silent = true,
         },
     },
-
     keys = {
         {
             '<C-o>',
