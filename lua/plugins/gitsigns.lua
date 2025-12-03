@@ -2,15 +2,50 @@ return {
     'lewis6991/gitsigns.nvim',
     lazy = false,
     keys = {
-        { 'ghl', ':Gitsigns next_hunk<CR>', desc = 'Next git hunk' },
-        { 'ghh', ':Gitsigns prev_hunk<CR>', desc = 'Previous git hunk' },
-        { 'gsh', ':Gitsigns stage_hunk<CR>', desc = 'Stage hunk' },
-        { 'grh', ':Gitsigns reset_hunk<CR>', desc = 'Reset hunk' },
-        { 'gph', ':Gitsigns preview_hunk<CR>', desc = 'Preview hunk' },
-        { 'ghb', ':Gitsigns blame_line<CR>', desc = 'Blame line' },
-        { 'ghB', ':Gitsigns blame<CR>', desc = 'Blame' },
-        { 'ghd', ':Gitsigns diffthis<CR>', desc = 'Diff this' },
-        { 'gtb', ':Gitsigns toggle_current_line_blame<CR>', desc = 'Toggle line blame' },
-        { 'gtw', ':Gitsigns toggle_word_diff<CR>', desc = 'Toggle word diff' },
+        { 
+            'ghl', 
+            function() require('gitsigns').next_hunk() end, 
+            desc = 'Next git hunk' 
+        },
+        { 
+            'ghh', 
+            function() require('gitsigns').prev_hunk() end, 
+            desc = 'Previous git hunk' 
+        },
+        { 
+            'gsh', 
+            function() require('gitsigns').stage_hunk() end, 
+            desc = 'Stage hunk' 
+        },
+        { 
+            'grh', 
+            function() require('gitsigns').reset_hunk() end, 
+            desc = 'Reset hunk' 
+        },
+        { 
+            'gph', 
+            function() require('gitsigns').preview_hunk() end, 
+            desc = 'Preview hunk' 
+        },
+        { 
+            'ghb', 
+            function() require('gitsigns').blame_line() end, 
+            desc = 'Blame line' 
+        },
+        { 
+            'ghd', 
+            function() require('gitsigns').diffthis() end, 
+            desc = 'Diff this' 
+        },
+        { 
+            'gtb', 
+            function() require('gitsigns').toggle_current_line_blame() end, 
+            desc = 'Toggle line blame' 
+        },
+        { 
+            'gtw', 
+            function() require('gitsigns').toggle_word_diff() end, 
+            desc = 'Toggle word diff' 
+        },
     },
 }
