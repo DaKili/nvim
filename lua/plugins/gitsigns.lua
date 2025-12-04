@@ -11,7 +11,7 @@ return {
             'ghh',
             function() require('gitsigns').prev_hunk() end,
             desc = 'Previous git hunk'
-        }
+        },
         {
             'gsh',
             function() require('gitsigns').stage_hunk() end,
