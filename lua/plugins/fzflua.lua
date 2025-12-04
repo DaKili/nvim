@@ -6,10 +6,19 @@ return {
     end,
     opts = {
         files = {
-            rg_opts = '-i --color=never --files --hidden -g "!.git" -g "!node_modules"',
+            rg_opts = '--color=never --files --hidden --follow '
+                .. '-g "!.git/" '
+                .. '-g "!node_modules/" '
+                .. '-g "!.git" '
+                .. '-g "!node_modules"',
         },
         grep = {
-            rg_opts = '-i --color=never --line-number --hidden -g "!.git" -g "!node_modules"',
+            rg_opts = '--color=never --line-number --hidden --follow '
+                .. '--column --smart-case '
+                .. '-g "!.git/" '
+                .. '-g "!node_modules/" '
+                .. '-g "!.git" '
+                .. '-g "!node_modules"',
             silent = true,
         },
     },
