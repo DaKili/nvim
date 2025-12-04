@@ -2,6 +2,15 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     lazy = false,
+    cond = function() -- Only load if a C compiler is available
+        local compilers = { 'cc', 'gcc', 'clang', 'cl', 'zig' }
+        for _, compiler in ipairs(compilers) do
+            if vim.fn.executable(compiler) == 1 then
+                return true
+            end
+        end
+        return false
+    end,
     keys = {
         {
             '<C-f>',
