@@ -46,6 +46,7 @@ vim.opt.backspace = 'indent,eol,start'
 vim.opt.path:append('**')
 vim.opt.mouse = 'a'
 vim.opt.encoding = 'UTF-8'
+vim.opt.splitright = true
 
 -- Command-line completion
 vim.opt.wildmenu = true
