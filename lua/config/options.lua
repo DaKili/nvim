@@ -27,7 +27,6 @@ vim.opt.incsearch = true
 vim.opt.winborder = 'single'
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = '120'
-vim.opt.showmatch = true
 vim.opt.completeopt = 'menuone,noinsert,noselect,preview'
 vim.opt.showmode = false
 vim.opt.pumheight = 10
