@@ -13,7 +13,7 @@ return {
     end,
     keys = {
         {
-            '<C-f>',
+            '<leader>f',
             function()
                 if vim.fn.foldclosed(vim.fn.line('.')) == -1 then
                     vim.cmd('foldclose')
