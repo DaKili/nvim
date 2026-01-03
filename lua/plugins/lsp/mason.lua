@@ -12,6 +12,8 @@ return {
                 'lua_ls',
                 'angularls',
                 'ts_ls',
+                'gopls',
+                'jsonls',
                 'html',
                 'cssls',
                 'tailwindcss',
@@ -23,6 +25,8 @@ return {
             ensure_installed = {
                 'stylua',
                 'prettierd',
+                'gofumpt',
+                'golangci-lint',
                 'prettier',
                 'eslint',
             },
