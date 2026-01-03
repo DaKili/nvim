@@ -29,6 +29,7 @@ return {
             ensure_installed = {
                 'angular',
                 'lua',
+                'json',
                 'javascript',
                 'typescript',
                 'tsx',

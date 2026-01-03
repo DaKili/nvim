@@ -31,7 +31,7 @@ vim.opt.completeopt = 'menuone,noinsert,noselect,preview'
 vim.opt.showmode = false
 vim.opt.pumheight = 10
 vim.opt.list = true
-vim.opt.listchars = { trail = '·', nbsp = '␣' }
+vim.opt.listchars = { trail = '·', nbsp = '␣', tab = '  ' }
 vim.opt.signcolumn = 'yes'
 
 -- File handling
