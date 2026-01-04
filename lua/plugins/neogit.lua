@@ -11,7 +11,7 @@ return {
             function()
                 require('neogit').open()
             end,
-            desc = 'Open Neogit'
+            desc = 'Open Neogit',
         },
     },
 }
