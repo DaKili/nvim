@@ -48,14 +48,14 @@ return {
 
         -- Enable folding via Treesitter
         vim.api.nvim_create_autocmd('BufEnter', {
-        callback = function()
-            if vim.treesitter.highlighter.active[vim.api.nvim_get_current_buf()] then
-                vim.opt_local.foldmethod = 'expr'
-                vim.opt_local.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-                vim.opt_local.foldenable = true
-                vim.opt_local.foldlevelstart = 99
-            end
-        end,
-    })
+            callback = function()
+                if vim.treesitter.highlighter.active[vim.api.nvim_get_current_buf()] then
+                    vim.opt_local.foldmethod = 'expr'
+                    vim.opt_local.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+                    vim.opt_local.foldenable = true
+                    vim.opt_local.foldlevelstart = 99
+                end
+            end,
+        })
     end,
 }
