@@ -7,32 +7,28 @@ return {
     config = function()
         require('mason').setup({})
 
+        local base = require('config.machine')
+
+        local ok, machine_local = pcall(require, 'config.machine_local')
+        local enabled_lsp = ok and machine_local.enabled_lsp or base.enabled_lsp
+        local enabled_tools = ok and machine_local.enabled_tools or base.enabled_tools
+
+        local lsp_servers = {}
+        for _, key in ipairs(enabled_lsp) do
+            table.insert(lsp_servers, base.available.lsp[key])
+        end
+
+        local tools = {}
+        for _, key in ipairs(enabled_tools) do
+            table.insert(tools, base.available.tools[key])
+        end
+
         require('mason-lspconfig').setup({
-            ensure_installed = {
-                'lua_ls',
-                'angularls',
-                'ts_ls',
-                'gopls',
-                'rust_analyzer',
-                'jsonls',
-                'html',
-                'cssls',
-                'taplo',
-                'tailwindcss',
-                'yamlls'
-            },
+            ensure_installed = lsp_servers,
         })
 
         require('mason-tool-installer').setup({
-            ensure_installed = {
-                'stylua',
-                'prettierd',
-                'gofumpt',
-                'golangci-lint',
-                'rustfmt',
-                'prettier',
-                'eslint',
-            },
+            ensure_installed = tools,
         })
     end,
 }
