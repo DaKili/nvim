@@ -29,7 +29,7 @@ M.available = {
         angular = 'angularls',
         rust = 'rust_analyzer',
         go = 'gopls',
-        -- csharp = 'roslyn'
+        -- csharp = 'roslyn' -- Must be installed manually via MasonInstall
     },
     tools = {
         lua = 'stylua',
