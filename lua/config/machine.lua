@@ -1,6 +1,7 @@
 -- Each machine enables what it needs in machine_local.lua
 -- For specific configurations create 'lua/config/machine_local.lua' and specify what you want installed.
 --
+-- ```
 -- local M = {}
 -- local global_list = require("config.machine")
 --
@@ -28,14 +29,13 @@ M.available = {
         angular = 'angularls',
         rust = 'rust_analyzer',
         go = 'gopls',
-        csharp = 'csharp_ls',
+        -- csharp = 'roslyn'
     },
     tools = {
         lua = 'stylua',
         prettier = 'prettierd',
         prettier_fallback = 'prettier',
         eslint = 'eslint',
-        rustfmt = 'rustfmt',
         gofmt = 'gofumpt',
     },
 }
