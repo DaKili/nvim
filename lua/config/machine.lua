@@ -31,10 +31,12 @@ M.available = {
         angular = 'angularls',
         rust = 'rust_analyzer',
         go = 'gopls',
+        zig = 'zls',
         -- csharp = 'roslyn' -- Must be installed manually via MasonInstall
     },
     tools = {
         lua = 'stylua',
+        csharp = 'csharpier',
         prettier = 'prettierd',
         prettier_fallback = 'prettier',
         eslint = 'eslint',
