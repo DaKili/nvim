@@ -1,6 +1,7 @@
 return {
     'stevearc/conform.nvim',
     opts = {
+        async = true,
         formatters_by_ft = {
             lua = { 'stylua' },
             javascript = { 'prettierd', 'prettier', stop_after_first = true },
@@ -11,6 +12,7 @@ return {
             css = { 'prettierd', 'prettier', stop_after_first = true },
             go = { 'gofumpt' },
             rust = { 'rustfmt' },
+            cs = { 'csharpier' },
         },
     },
     keys = {
