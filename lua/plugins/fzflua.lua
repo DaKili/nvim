@@ -45,6 +45,13 @@ return {
             desc = '[f]ind files by [g]repping project directory.',
         },
         {
+            '<leader>fw',
+            function()
+                require('fzf-lua').grep_cword()
+            end,
+            desc = '[f]ind occurances of [w]word.',
+        },
+        {
             '<leader>fc',
             function()
                 require('fzf-lua').files({ cwd = '~/.config' })
