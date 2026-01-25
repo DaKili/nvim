@@ -14,17 +14,17 @@ return {
             desc = 'Previous git hunk'
         },
         {
-            'gsh',
+            'ghs',
             function() require('gitsigns').stage_hunk() end,
             desc = 'Stage hunk'
         },
         {
-            'grh',
+            'ghr',
             function() require('gitsigns').reset_hunk() end,
             desc = 'Reset hunk'
         },
         {
-            'gph',
+            'ghp',
             function() require('gitsigns').preview_hunk() end,
             desc = 'Preview hunk'
         },
