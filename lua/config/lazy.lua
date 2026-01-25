@@ -29,7 +29,10 @@ require('lazy').setup({
         { import = 'plugins' },
     },
     install = { colorscheme = { 'oxocarbon' } },
-    checker = { enabled = true }, -- automatically check for plugin updates
+    checker = { -- automatically check for plugin updates
+        enabled = true,
+        notify = false,
+    },
     change_detection = { notify = false },
 })
 
