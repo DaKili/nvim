@@ -32,6 +32,7 @@ return {
                 'html',
                 'javascript',
                 'json',
+                'go',
                 'lua',
                 'tsx',
                 'typescript',
