@@ -55,11 +55,18 @@ return {
             desc = 'Find files within my .config.',
         },
         {
-            '<leader>fh',
+            '<leader>fH',
             function()
                 require('fzf-lua').helptags()
             end,
             desc = 'Find within neovim help.',
+        },
+        {
+            '<leader>fh',
+            function()
+                require('fzf-lua').git_hunks()
+            end,
+            desc = 'Find within git hunks.',
         },
         {
             '<leader>fk',
