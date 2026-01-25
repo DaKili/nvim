@@ -1,6 +1,6 @@
 -- Create splits
-vim.keymap.set('n', '<Leader>N', ':rightbelow new<CR>', { desc = 'Create vertical split', silent = true })
-vim.keymap.set('n', '<Leader>n', ':rightbelow vnew<CR>', { desc = 'Create vertical split', silent = true })
+vim.keymap.set('n', '<Leader>N', ':rightbelow new<CR>', { desc = 'Create new split to the right', silent = true })
+vim.keymap.set('n', '<Leader>n', ':rightbelow vnew<CR>', { desc = 'Create new split to the bottom', silent = true })
 
 -- Navigate splits
 vim.keymap.set('n', '<Leader>h', '<C-w>h', { desc = 'Move to left window' })
