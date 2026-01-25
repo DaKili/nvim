@@ -5,6 +5,7 @@ return {
         'sindrets/diffview.nvim',
         'ibhagwan/fzf-lua', -- optional
     },
+    opts = {},
     keys = {
         {
             '<leader>g',

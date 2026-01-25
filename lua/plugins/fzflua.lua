@@ -7,16 +7,12 @@ return {
     opts = {
         files = {
             rg_opts = '--color=never --files --hidden --follow '
-                .. '-g "!.git/" '
-                .. '-g "!node_modules/" '
                 .. '-g "!.git" '
                 .. '-g "!node_modules"',
         },
         grep = {
             rg_opts = '--color=never --line-number --hidden --follow '
                 .. '--column --smart-case '
-                .. '-g "!.git/" '
-                .. '-g "!node_modules/" '
                 .. '-g "!.git" '
                 .. '-g "!node_modules"',
             silent = true,
