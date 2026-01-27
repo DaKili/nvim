@@ -97,6 +97,20 @@ return {
             desc = 'Find Word.',
         },
         {
+            '<leader>fdw',
+            function()
+                require('fzf-lua').lsp_workspace_diagnostics()
+            end,
+            desc = 'Find workspace diagnostics'
+        },
+        {
+            '<leader>fdf',
+            function()
+                require('fzf-lua').lsp_document_diagnostics()
+            end,
+            desc = 'Find document diagnostics'
+        },
+        {
             'gd',
             function()
                 local fzf = require('fzf-lua')
