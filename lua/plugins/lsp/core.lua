@@ -10,8 +10,6 @@ local function setup_lsp_keymaps(event)
     map('gca', require('fzf-lua').lsp_code_actions, '[G]oto [C]ode [A]ction', { 'n', 'x' })
     map('grr', require('fzf-lua').lsp_references, '[G]oto [R]eferences')
     map('gri', require('fzf-lua').lsp_implementations, '[G]oto [I]mplementation')
-    map('grd', require('fzf-lua').lsp_typedefs, 'Type [D]efinition')
-    map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
     map('gO', require('fzf-lua').lsp_live_workspace_symbols, 'Workspace Symbols')
 end
 
@@ -49,7 +47,7 @@ local function setup_diagnostics()
     vim.diagnostic.config({
         severity_sort = true,
         float = { border = 'rounded', source = 'if_many' },
-        underline = { severity = vim.diagnostic.severity.ERROR },
+        underline = true,
         signs = {
             text = {
                 [vim.diagnostic.severity.ERROR] = '󰅚 ',

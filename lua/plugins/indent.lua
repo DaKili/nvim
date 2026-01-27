@@ -7,7 +7,6 @@ return {
             char = '▏',
             tab_char = '▏',
         },
-        scope = { enabled = true },
     },
     config = function(_, opts)
         vim.api.nvim_set_hl(0, 'IblIndent', { fg = '#3a3a3a' })

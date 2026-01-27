@@ -46,6 +46,6 @@ vim.keymap.set('v', '<C-c>', '"+y', { noremap = true, desc = 'Copy to system cli
 
 -- Misc
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<Esc>:update<CR>', { desc = 'Save buffer' })
-vim.keymap.set('n', '<C-f>', 'za', { desc = 'Toggle fold at cursor' })
 vim.keymap.set('n', '<leader>U', ':UpdateAll<CR>', { desc = 'Update all plugins and tools' })
+vim.keymap.set('n', '<C-k>', vim.diagnostic.open_float, { desc = 'Show diagnostics' })
 -- C-w is delete word like in normal text editors
