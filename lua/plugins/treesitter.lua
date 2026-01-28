@@ -29,6 +29,7 @@ return {
             ensure_installed = {
                 'angular',
                 'css',
+                'scss',
                 'html',
                 'javascript',
                 'json',
