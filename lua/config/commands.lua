@@ -15,20 +15,25 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     end,
 })
 
--- Close all saved buffers
+-- Close all saved buffers not visible in any split
 vim.api.nvim_create_user_command('BufCleanup', function()
-    local current = vim.api.nvim_get_current_buf()
+    local visible_buffers = {}
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+        local buf = vim.api.nvim_win_get_buf(win)
+        visible_buffers[buf] = true
+    end
+
     local closed = 0
     for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-        if buf ~= current and vim.api.nvim_buf_is_valid(buf) then
+        if not visible_buffers[buf] and vim.api.nvim_buf_is_valid(buf) then
             if vim.bo[buf].buftype == '' and not vim.bo[buf].modified then
                 vim.api.nvim_buf_delete(buf, { force = false })
                 closed = closed + 1
             end
         end
     end
-    print('Closed ' .. closed .. ' saved buffer(s)')
-end, { desc = 'Close all saved buffers except current' })
+    require('fidget').notify('Closed ' .. closed .. ' saved buffer(s)')
+end, {})
 
 -- Log updates to a file
 local function log_update(message)
@@ -64,8 +69,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
 
 -- Update command with logging
 vim.api.nvim_create_user_command('UpdateAll', function()
-    log_update('=== Update started ===')
-
+    require('fidget').notify('Checking for plugin updates...')
     local lazy_plugins = require('lazy').plugins()
     local updated_plugins = {}
 
@@ -75,22 +79,16 @@ vim.api.nvim_create_user_command('UpdateAll', function()
         end
     end
 
-    require('fidget').notify('Updating plugins...')
     require('lazy').update({
         wait = true,
         show = false,
     })
 
-    -- Log updated plugins
     if #updated_plugins > 0 then
         log_update('Updated plugins: ' .. table.concat(updated_plugins, ', '))
+        require('fidget').notify('Updated ' .. #updated_plugins .. 'plugins!')
+        require('fidget').notify('Log: ' .. vim.fn.stdpath('data') .. '/update.log')
     else
-        log_update('No plugin updates')
+        require('fidget').notify('No plugin updates')
     end
-
-    -- Update Mason tools
-    require('fidget').notify('Updating Mason tools...')
-    vim.cmd('MasonToolsUpdate')
-
-    require('fidget').notify('Updates complete! Log: ' .. vim.fn.stdpath('data') .. '/update.log')
 end, {})

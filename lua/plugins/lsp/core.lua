@@ -101,7 +101,7 @@ end
 return {
     'neovim/nvim-lspconfig',
     dependencies = {
-        { 'j-hui/fidget.nvim', opts = {} },
+        'j-hui/fidget.nvim',
         'saghen/blink.cmp',
     },
     config = function()
