@@ -13,7 +13,7 @@ return {
             scss = { 'prettierd', 'prettier', stop_after_first = true },
             go = { 'gofumpt' },
             rust = { 'rustfmt' },
-            cs = { 'csharpier' },
+            cs = { 'roslyn' },
         },
     },
     keys = {
