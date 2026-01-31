@@ -10,15 +10,20 @@ local function update_title()
     vim.opt.titlestring = '[' .. indicator .. '] ' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
 end
 
+local grp = vim.api.nvim_create_augroup('UserCommands', { clear = true })
+
 vim.api.nvim_create_autocmd({ 'BufModifiedSet', 'BufWritePost', 'BufAdd', 'BufDelete' }, {
+    group = grp,
     callback = update_title,
 })
 vim.api.nvim_create_autocmd('VimEnter', {
+    group = grp,
     callback = function() vim.defer_fn(update_title, 0) end,
 })
 
 -- Highlight yanked text
 vim.api.nvim_create_autocmd('TextYankPost', {
+    group = grp,
     callback = function()
         vim.highlight.on_yank()
     end,
@@ -26,6 +31,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Create directories when saving files
 vim.api.nvim_create_autocmd('BufWritePre', {
+    group = grp,
     callback = function()
         local dir = vim.fn.expand('<afile>:p:h')
         if vim.fn.isdirectory(dir) == 0 then
@@ -74,6 +80,7 @@ end
 
 -- Check for updates on startup
 vim.api.nvim_create_autocmd('VimEnter', {
+    group = grp,
     callback = function()
         vim.defer_fn(function()
             require('lazy').check({ show = false })
@@ -105,7 +112,7 @@ vim.api.nvim_create_user_command('UpdateAll', function()
 
     if #updated_plugins > 0 then
         log_update('Updated plugins: ' .. table.concat(updated_plugins, ', '))
-        require('fidget').notify('Updated ' .. #updated_plugins .. 'plugins!')
+        require('fidget').notify('Updated ' .. #updated_plugins .. ' plugins!')
         require('fidget').notify('Log: ' .. vim.fn.stdpath('data') .. '/update.log')
     else
         require('fidget').notify('No plugin updates')

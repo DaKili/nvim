@@ -15,18 +15,16 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
-vim.opt.autoindent = true
 
 -- Search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true -- Case sensitive search if uppercase in search
-vim.opt.incsearch = true
 
 -- Visual settings
 vim.opt.winborder = 'single'
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = '120'
-vim.opt.completeopt = 'menuone,noinsert,noselect,preview'
+vim.opt.completeopt = 'menuone,noinsert,noselect,preview' -- ignored when blink is used
 vim.opt.showmode = false
 vim.opt.pumheight = 10
 vim.opt.list = true
@@ -34,21 +32,16 @@ vim.opt.listchars = { trail = '·', nbsp = '␣', tab = '  ' }
 vim.opt.signcolumn = 'yes'
 
 -- File handling
-vim.opt.autoread = true
 vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
 
 -- Behavior settings
 vim.opt.errorbells = false
-vim.opt.backspace = 'indent,eol,start'
 vim.opt.path:append('**')
-vim.opt.mouse = 'a'
-vim.opt.encoding = 'UTF-8'
 vim.opt.splitright = true
 
 -- Command-line completion
-vim.opt.wildmenu = true
 vim.opt.wildmode = 'full'
 
 -- Netrw
