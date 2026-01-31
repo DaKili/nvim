@@ -21,7 +21,7 @@ return {
     keys = {
         {
             '<leader>rs',
-            ':AutoSession search<CR>',
+            '<cmd>AutoSession search<CR>',
             desc = 'Search recent sessions',
         },
     },
