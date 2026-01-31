@@ -1,3 +1,22 @@
+-- Update title to show unsaved buffer count
+local function update_title()
+    local unsaved = 0
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+        if vim.api.nvim_buf_is_loaded(buf) and vim.bo[buf].modified then
+            unsaved = unsaved + 1
+        end
+    end
+    local indicator = unsaved == 0 and 'N' or unsaved == 1 and 'N+' or ('N+' .. unsaved)
+    vim.opt.titlestring = '[' .. indicator .. '] ' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+end
+
+vim.api.nvim_create_autocmd({ 'BufModifiedSet', 'BufWritePost', 'BufAdd', 'BufDelete' }, {
+    callback = update_title,
+})
+vim.api.nvim_create_autocmd('VimEnter', {
+    callback = function() vim.defer_fn(update_title, 0) end,
+})
+
 -- Highlight yanked text
 vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()

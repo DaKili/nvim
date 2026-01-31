@@ -8,7 +8,6 @@ vim.opt.sidescrolloff = 8
 vim.loader.enable()
 vim.opt.updatetime = 200
 vim.opt.title = true
-vim.opt.titlestring = "%m %{fnamemodify(getcwd(),':t')}"
 
 -- Indentation
 vim.opt.tabstop = 4
