@@ -47,4 +47,3 @@ vim.opt.wildmode = 'full'
 -- Netrw
 vim.g.netrw_banner = 0
 vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
--- vim.g.netrw_liststyle = 3 -- show tree style directory
