@@ -95,7 +95,6 @@ vim.api.nvim_create_autocmd('VimEnter', {
 
 -- Update command with logging
 vim.api.nvim_create_user_command('UpdateAll', function()
-    require('fidget').notify('Checking for plugin updates...')
     local lazy_plugins = require('lazy').plugins()
     local updated_plugins = {}
 
@@ -112,8 +111,10 @@ vim.api.nvim_create_user_command('UpdateAll', function()
 
     if #updated_plugins > 0 then
         log_update('Updated plugins: ' .. table.concat(updated_plugins, ', '))
-        require('fidget').notify('Updated ' .. #updated_plugins .. ' plugins!')
         require('fidget').notify('Log: ' .. vim.fn.stdpath('data') .. '/update.log')
+        for _, updated_plugin in pairs(updated_plugins) do
+            require('fidget').notify('Updated: ' .. updated_plugin)
+        end
     else
         require('fidget').notify('No plugin updates')
     end
