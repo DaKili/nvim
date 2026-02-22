@@ -11,19 +11,6 @@ return {
         end
         return false
     end,
-    keys = {
-        {
-            '<C-f>',
-            function()
-                if vim.fn.foldclosed(vim.fn.line('.')) == -1 then
-                    vim.cmd('foldclose')
-                else
-                    vim.cmd('foldopen')
-                end
-            end,
-            desc = 'Toggle fold at cursor',
-        },
-    },
     config = function()
         require('nvim-treesitter.configs').setup({
             ensure_installed = {
@@ -45,20 +32,6 @@ return {
                 additional_vim_regex_highlighting = false,
             },
             indent = { enable = true },
-        })
-
-        -- Enable folding via Treesitter
-        vim.api.nvim_create_autocmd('BufEnter', {
-            callback = function(ev)
-                if vim.b[ev.buf]._ts_fold_set then return end
-                if vim.treesitter.highlighter.active[ev.buf] then
-                    vim.opt_local.foldmethod = 'expr'
-                    vim.opt_local.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-                    vim.opt_local.foldenable = true
-                    vim.opt_local.foldlevel = 99
-                    vim.b[ev.buf]._ts_fold_set = true
-                end
-            end,
         })
     end,
 }
