@@ -118,7 +118,12 @@ return {
                     local range = loc.range or loc.targetSelectionRange
                     local bufnr = vim.uri_to_bufnr(uri)
                     vim.bo[bufnr].buflisted = true
+                    local is_same_buf = bufnr == vim.api.nvim_get_current_buf()
                     vim.api.nvim_set_current_buf(bufnr)
+                    if is_same_buf then
+                        -- G is a jump command: pushes the current position onto the jumplist
+                        vim.cmd('normal! ' .. (range.start.line + 1) .. 'G')
+                    end
                     vim.api.nvim_win_set_cursor(0, { range.start.line + 1, range.start.character })
                 end
 
