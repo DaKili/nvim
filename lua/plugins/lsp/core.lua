@@ -5,6 +5,10 @@ local function setup_lsp_keymaps(event)
         vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
 
+    -- Diagnostic navigation
+    map('gdl', vim.diagnostic.goto_next, '[D]iagnostic next')
+    map('gdh', vim.diagnostic.goto_prev, '[D]iagnostic prev')
+
     -- Core LSP mappings
     map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
     map('gca', require('fzf-lua').lsp_code_actions, '[G]oto [C]ode [A]ction', { 'n', 'x' })
