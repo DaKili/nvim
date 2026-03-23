@@ -21,6 +21,13 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Allow nvim to use mise shims
+if vim.fn.has('win32') == 1 then
+    vim.env.PATH = vim.env.PATH .. ';' .. vim.env.LOCALAPPDATA .. '\\mise\\shims'
+else
+    vim.env.PATH = vim.env.PATH .. ':' .. vim.env.HOME .. '/.local/share/mise/shims'
+end
+
 require('config.options')
 
 -- Setup lazy.nvim
