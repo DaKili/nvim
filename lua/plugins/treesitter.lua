@@ -1,5 +1,6 @@
 return {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'master',
     build = ':TSUpdate',
     lazy = false,
     cond = function() -- Only load if a C compiler is available
