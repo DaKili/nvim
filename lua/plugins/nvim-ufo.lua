@@ -17,10 +17,12 @@ return {
         {
             '<C-f>',
             function()
-                if vim.fn.foldclosed(vim.fn.line('.')) == -1 then
-                    vim.cmd('foldclose')
-                else
+                local line = vim.fn.line('.')
+                if vim.fn.foldlevel(line) == 0 then return end
+                if vim.fn.foldclosed(line) ~= -1 then
                     vim.cmd('foldopen')
+                else
+                    vim.cmd('foldclose')
                 end
             end,
             desc = 'Toggle fold at cursor',
