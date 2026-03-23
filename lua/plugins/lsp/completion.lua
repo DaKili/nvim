@@ -24,6 +24,11 @@ return {
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
         },
+        fuzzy = {
+            prebuilt_binaries = {
+                extra_curl_args = { '--ssl-no-revoke' },
+            },
+        },
     },
     opts_extend = { 'sources.default' },
 }
