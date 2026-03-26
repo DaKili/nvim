@@ -6,8 +6,12 @@ local function setup_lsp_keymaps(event)
     end
 
     -- Diagnostic navigation
-    map('gdl', vim.diagnostic.goto_next, '[D]iagnostic next')
-    map('gdh', vim.diagnostic.goto_prev, '[D]iagnostic prev')
+    map('gdl', function()
+        vim.diagnostic.jump({ count = 1 })
+    end, '[D]iagnostic next')
+    map('gdh', function()
+        vim.diagnostic.jump({ count = -1 })
+    end, '[D]iagnostic prev')
 
     -- Core LSP mappings
     map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
