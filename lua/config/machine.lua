@@ -26,6 +26,7 @@ M.available = {
         typescript = 'ts_ls',
         html = 'html',
         css = 'cssls',
+        eslint = 'eslint',
         tailwind = 'tailwindcss',
         yaml = 'yamlls',
         angular = 'angularls',
@@ -39,13 +40,12 @@ M.available = {
         csharp = 'csharpier',
         prettier = 'prettierd',
         prettier_fallback = 'prettier',
-        eslint = 'eslint',
         gofmt = 'gofumpt',
     },
 }
 
 -- Defaults
-M.enabled_lsp = { 'lua', 'typescript', 'html', 'css' }
+M.enabled_lsp = { 'lua', 'typescript', 'html', 'css', 'eslint' }
 M.enabled_tools = { 'lua', 'prettier', 'prettier_fallback' }
 
 return M

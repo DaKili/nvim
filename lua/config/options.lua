@@ -35,11 +35,13 @@ vim.opt.signcolumn = 'yes'
 vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
+vim.opt.diffopt = 'algorithm:histogram,internal,indent-heuristic,filler,closeoff,iwhite,vertical,linematch:100'
 
 -- Behavior settings
 vim.opt.errorbells = false
 vim.opt.path:append('**')
 vim.opt.splitright = true
+vim.opt.shada = "!,'10,/100,:100,<0,@1,f1,h,s1"
 
 -- Command-line completion
 vim.opt.wildmode = 'full'

@@ -23,7 +23,7 @@ end
 
 -- Document highlighting configuration
 local function setup_document_highlighting(event, client)
-    if not (client and client.supports_method('textDocument/documentHighlight')) then
+    if not (client and client:supports_method('textDocument/documentHighlight')) then
         return
     end
 

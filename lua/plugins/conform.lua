@@ -5,7 +5,7 @@ return {
         formatters = {
             oxfmt = {
                 prepend_args = function()
-                    local prettierrc = vim.fs.find('.prettierrc', {
+                    local prettierrc = vim.fs.find({ '.prettierrc', '.prettierrc.json' }, {
                         upward = true,
                         path = vim.fn.expand('%:p:h'),
                     })[1]
