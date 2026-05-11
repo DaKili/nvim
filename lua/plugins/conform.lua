@@ -26,7 +26,6 @@ return {
             css = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
             scss = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
             go = { 'gofumpt' },
-            rust = { 'rustfmt' },
             cs = { lsp_format = 'prefer' },
         },
     },
