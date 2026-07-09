@@ -90,18 +90,18 @@ return {
             desc = 'Find Word.',
         },
         {
-            '<leader>fdw',
+            '<leader>dw',
             function()
                 require('fzf-lua').lsp_workspace_diagnostics()
             end,
-            desc = 'Find workspace diagnostics'
+            desc = '[D]iagnostics: [p]roject'
         },
         {
-            '<leader>fdf',
+            '<leader>df',
             function()
                 require('fzf-lua').lsp_document_diagnostics()
             end,
-            desc = 'Find document diagnostics'
+            desc = '[D]iagnostics: [f]ile'
         },
         {
             'gd',

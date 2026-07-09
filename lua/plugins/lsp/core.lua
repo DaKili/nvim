@@ -5,20 +5,11 @@ local function setup_lsp_keymaps(event)
         vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
 
-    -- Diagnostic navigation
-    map('gdl', function()
-        vim.diagnostic.jump({ count = 1 })
-    end, '[D]iagnostic next')
-    map('gdh', function()
-        vim.diagnostic.jump({ count = -1 })
-    end, '[D]iagnostic prev')
-
     -- Core LSP mappings
     map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
     map('gca', require('fzf-lua').lsp_code_actions, '[G]oto [C]ode [A]ction', { 'n', 'x' })
     map('grr', require('fzf-lua').lsp_references, '[G]oto [R]eferences')
     map('gri', require('fzf-lua').lsp_implementations, '[G]oto [I]mplementation')
-    map('gO', require('fzf-lua').lsp_live_workspace_symbols, 'Workspace Symbols')
 end
 
 -- Document highlighting configuration

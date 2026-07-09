@@ -27,19 +27,5 @@ return {
             end,
             desc = 'Toggle fold at cursor',
         },
-        {
-            'zR',
-            function()
-                require('ufo').openAllFolds()
-            end,
-            desc = 'Open all folds',
-        },
-        {
-            'zK',
-            function()
-                require('ufo').peekFoldedLinesUnderCursor()
-            end,
-            desc = 'Peek fold',
-        },
     },
 }

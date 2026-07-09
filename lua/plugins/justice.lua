@@ -2,7 +2,7 @@ return {
     'chrisgrieser/nvim-justice',
     keys = {
         {
-            'gj',
+            '<leader>j',
             function()
                 require('justice').select()
             end,

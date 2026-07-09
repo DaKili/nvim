@@ -49,3 +49,13 @@ vim.opt.wildmode = 'full'
 -- Netrw
 vim.g.netrw_banner = 0
 vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
+
+-- Shell (use PowerShell 7 instead of cmd.exe for :terminal and :! on Windows)
+if vim.fn.has('win32') == 1 then
+    vim.opt.shell = 'pwsh'
+    vim.opt.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command'
+    vim.opt.shellredir = '-RedirectStandardOutput %s -NoNewWindow -Wait'
+    vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+    vim.opt.shellquote = ''
+    vim.opt.shellxquote = ''
+end

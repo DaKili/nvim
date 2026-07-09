@@ -4,49 +4,58 @@ return {
     opts = {},
     keys = {
         {
-            'ghl',
+            '<leader>hl',
             function() require('gitsigns').next_hunk() end,
-            desc = 'Next git hunk'
+            desc = '[H]unk: next'
         },
         {
-            'ghh',
+            '<leader>hh',
             function() require('gitsigns').prev_hunk() end,
-            desc = 'Previous git hunk'
+            desc = '[H]unk: previous'
         },
         {
-            'ghs',
+            '<leader>hs',
             function() require('gitsigns').stage_hunk() end,
-            desc = 'Stage hunk'
+            desc = '[H]unk: stage'
         },
         {
-            'ghr',
+            '<leader>hr',
             function() require('gitsigns').reset_hunk() end,
-            desc = 'Reset hunk'
+            desc = '[H]unk: reset'
         },
         {
-            'ghp',
+            '<leader>hp',
             function() require('gitsigns').preview_hunk() end,
-            desc = 'Preview hunk'
+            desc = '[H]unk: preview'
         },
         {
-            'ghb',
+            '<leader>hb',
             function() require('gitsigns').blame_line() end,
-            desc = 'Blame line'
+            desc = '[H]unk: blame line'
         },
         {
-            'ghd',
+            '<leader>hd',
             function() require('gitsigns').diffthis() end,
-            desc = 'Diff this'
+            desc = '[H]unk: diff this'
         },
         {
-            'gtb',
+            '<leader>hA',
+            function()
+                require('gitsigns').setqflist('all', { open = false }, function()
+                    require('fzf-lua').quickfix()
+                end)
+            end,
+            desc = '[H]unk: [A]ll (project-wide) in fzf'
+        },
+        {
+            '<leader>tb',
             function() require('gitsigns').toggle_current_line_blame() end,
-            desc = 'Toggle line blame'
+            desc = '[T]oggle line [b]lame'
         },
         {
-            'gtw',
+            '<leader>tw',
             function() require('gitsigns').toggle_word_diff() end,
-            desc = 'Toggle word diff'
+            desc = '[T]oggle [w]ord diff'
         },
     },
 }
