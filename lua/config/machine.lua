@@ -45,7 +45,7 @@ M.available = {
 }
 
 -- Defaults
-M.enabled_lsp = { 'lua', 'typescript', 'html', 'css', 'eslint' }
+M.enabled_lsp = { 'lua', 'typescript', 'html', 'css', 'eslint', 'rust' }
 M.enabled_tools = { 'lua', 'prettier', 'prettier_fallback' }
 
 return M
