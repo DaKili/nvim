@@ -45,49 +45,49 @@ return {
             function()
                 require('fzf-lua').files({ cwd = '~/.config' })
             end,
-            desc = 'Find files within my .config.',
+            desc = '[F]ind files within my .[c]onfig.',
         },
         {
             '<leader>fH',
             function()
                 require('fzf-lua').helptags()
             end,
-            desc = 'Find within neovim help.',
+            desc = '[F]ind within neovim [H]elp.',
         },
         {
             '<leader>fh',
             function()
                 require('fzf-lua').git_hunks()
             end,
-            desc = 'Find within git hunks.',
+            desc = '[F]ind within git [h]unks.',
         },
         {
             '<leader>fk',
             function()
                 require('fzf-lua').keymaps()
             end,
-            desc = 'Find keymaps.',
+            desc = '[F]ind [k]eymaps.',
         },
         {
             '<leader>fb',
             function()
                 require('fzf-lua').builtin()
             end,
-            desc = 'Find builtin fuzzy finders.',
+            desc = '[F]ind [b]uiltin fuzzy finders.',
         },
         {
             '<leader>fw',
             function()
                 require('fzf-lua').grep_cword()
             end,
-            desc = 'Find word.',
+            desc = '[F]ind [w]ord.',
         },
         {
             '<leader>fW',
             function()
                 require('fzf-lua').grep_cWORD()
             end,
-            desc = 'Find Word.',
+            desc = '[F]ind [W]ord.',
         },
         {
             '<leader>dw',

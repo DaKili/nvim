@@ -40,17 +40,17 @@ vim.keymap.set('n', '-', '<cmd>Explore<CR>', { desc = 'Open parent directory in 
 vim.keymap.set('v', '<C-c>', '"+y', { noremap = true, desc = 'Copy to system clipboard' })
 
 -- Diagnostics
-vim.keymap.set('n', '<leader>dj', function()
+vim.keymap.set('n', '<leader>dl', function()
     vim.diagnostic.jump({ count = 1 })
-end, { desc = '[D]iagnostics: next' })
-vim.keymap.set('n', '<leader>dk', function()
+end, { desc = '[D]iagnostics: next[l]' })
+vim.keymap.set('n', '<leader>dh', function()
     vim.diagnostic.jump({ count = -1 })
-end, { desc = '[D]iagnostics: prev' })
+end, { desc = '[D]iagnostics: prev[h]' })
+vim.keymap.set('n', '<C-k>', vim.diagnostic.open_float, { desc = 'Show diagnostics' })
 
 -- Misc
 vim.keymap.set({ 'n', 'v' }, '<C-s>', '<Esc><cmd>update<CR>', { desc = 'Save buffer' })
 vim.keymap.set('i', '<C-s>', '<Esc><cmd>update<CR>gi', { desc = 'Save buffer in insert mode' })
-vim.keymap.set('n', '<leader>cb', '<cmd>BufCleanup<CR>', { desc = 'Close all saved buffers', silent = true })
-vim.keymap.set('n', '<leader>U', '<cmd>UpdateAll<CR>', { desc = 'Update all plugins and tools' })
-vim.keymap.set('n', '<C-k>', vim.diagnostic.open_float, { desc = 'Show diagnostics' })
+vim.keymap.set('n', '<leader>cb', '<cmd>BufCleanup<CR>', { desc = '[C]lose all saved [b]uffers', silent = true })
+vim.keymap.set('n', '<leader>U', '<cmd>UpdateAll<CR>', { desc = '[U]pdate all plugins and tools' })
 -- C-w is delete word like in normal text editors
