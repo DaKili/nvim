@@ -17,7 +17,8 @@ return {
             'tsx',
             'typescript',
             'yaml',
-            'rust'
+            'rust',
+            'bicep'
         })
         vim.api.nvim_create_autocmd('FileType', {
             callback = function(ev)
