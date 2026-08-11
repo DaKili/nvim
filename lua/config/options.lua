@@ -8,6 +8,7 @@ vim.opt.sidescrolloff = 8
 vim.loader.enable()
 vim.opt.updatetime = 200
 vim.opt.title = true
+vim.opt.gcr = 'n-v:block-blinkwait700-blinkoff400-blinkon400,c-sm:block-blinkon0,i-ci-ve:ver25-blinkon0,r-cr-o:hor20-blinkon0'
 
 -- Indentation
 vim.opt.tabstop = 4
