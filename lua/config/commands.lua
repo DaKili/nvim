@@ -60,6 +60,14 @@ vim.api.nvim_create_user_command('BufCleanup', function()
     require('fidget').notify('Closed ' .. closed .. ' saved buffer(s)')
 end, {})
 
+-- Strip carriage returns from the buffer
+vim.api.nvim_create_user_command('StripCarriageReturns', function()
+    local view = vim.fn.winsaveview()
+    vim.cmd([[silent! keeppatterns %s/\r//g]])
+    vim.fn.winrestview(view)
+end, { desc = 'Remove all carriage returns (\\r)' })
+vim.cmd('cnoreabbrev Scr StripCarriageReturns')
+
 -- Log updates to a file
 local function log_update(message)
     local log_file = vim.fn.stdpath('data') .. '/update.log'
