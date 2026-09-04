@@ -64,36 +64,9 @@ end
 
 -- Individual server configurations
 local function setup_server_configs()
-    vim.lsp.config('lua_ls', {
-        settings = {
-            Lua = {
-                runtime = { version = 'LuaJIT' },
-                diagnostics = {
-                    globals = { 'vim' },
-                },
-                workspace = {
-                    library = {
-                        vim.env.VIMRUNTIME,
-                        '${3rd}/luv/library',
-                    },
-                    checkThirdParty = false,
-                    maxPreload = 100000,
-                    preloadFileSize = 10000,
-                },
-                telemetry = { enable = false },
-                completion = { callSnippet = 'Replace' },
-            },
-        },
-    })
-
-    -- Only load angular if neovim is opened in an angular project.
-    vim.lsp.config('angularls', {
-        root_dir = function(fname)
-            local util = require('lspconfig.util')
-            local root = util.root_pattern('angular.json', 'project.json')(fname)
-            return root
-        end,
-    })
+    for server, cfg in pairs(require('config.stacks').getLspConfigs()) do
+        vim.lsp.config(server, cfg)
+    end
 end
 
 -- Main plugin configuration

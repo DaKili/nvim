@@ -1,35 +1,25 @@
 return {
     'stevearc/conform.nvim',
-    opts = {
-        async = true,
-        formatters = {
-            oxfmt = {
-                prepend_args = function()
-                    local prettierrc = vim.fs.find({ '.prettierrc', '.prettierrc.json' }, {
-                        upward = true,
-                        path = vim.fn.expand('%:p:h'),
-                    })[1]
-                    if prettierrc then
-                        return { '-c', prettierrc }
-                    end
-                    return {}
-                end,
+    opts = function()
+        return {
+            async = true,
+            formatters = {
+                oxfmt = {
+                    prepend_args = function()
+                        local prettierrc = vim.fs.find({ '.prettierrc', '.prettierrc.json' }, {
+                            upward = true,
+                            path = vim.fn.expand('%:p:h'),
+                        })[1]
+                        if prettierrc then
+                            return { '-c', prettierrc }
+                        end
+                        return {}
+                    end,
+                },
             },
-        },
-        formatters_by_ft = {
-            lua = { 'stylua' },
-            javascript = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
-            typescript = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
-            typescriptreact = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
-            json = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
-            html = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
-            css = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
-            scss = { 'oxfmt', 'prettierd', 'prettier', stop_after_first = true },
-            go = { 'gofumpt' },
-            cs = { lsp_format = 'prefer' },
-            rust = { lsp_format = 'prefer' },
-        },
-    },
+            formatters_by_ft = require('config.stacks').getFormatters(),
+        }
+    end,
     keys = {
         {
             '<leader>cf',

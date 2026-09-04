@@ -6,19 +6,7 @@ return {
     config = function()
         vim.env.CC = 'gcc'
         require('nvim-treesitter').install({
-            'angular',
-            'css',
-            'scss',
-            'html',
-            'javascript',
-            'json',
-            'go',
-            'lua',
-            'tsx',
-            'typescript',
-            'yaml',
-            'rust',
-            'bicep'
+            require('config.stacks').getParsers()
         })
         vim.api.nvim_create_autocmd('FileType', {
             callback = function(ev)
