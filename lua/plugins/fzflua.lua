@@ -1,17 +1,18 @@
 return {
     'ibhagwan/fzf-lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function()
+    config = function(_, opts)
+        require('fzf-lua').setup(opts)
         require('fzf-lua').register_ui_select()
     end,
     opts = {
         files = {
-            rg_opts = '--color=never --files --hidden --follow '
+            cmd = 'rg --color=never --files --hidden --follow --no-ignore-global '
                 .. '-g "!.git" '
                 .. '-g "!node_modules"',
         },
         grep = {
-            rg_opts = '--color=never --line-number --hidden --follow '
+            rg_opts = '--color=never --line-number --hidden --follow --no-ignore-global '
                 .. '--column --smart-case '
                 .. '-g "!.git" '
                 .. '-g "!node_modules"',
