@@ -6,7 +6,14 @@ return {
         require('fzf-lua').register_ui_select()
     end,
     opts = {
+        defaults = {
+            formatter = 'path.filename_first',
+        },
+        lsp = {
+            path_shorten = 3,
+        },
         files = {
+            path_shorten = 3,
             cmd = 'rg --color=never --files --hidden --follow --no-ignore-global '
                 .. '-g "!.git" '
                 .. '-g "!node_modules"',
@@ -95,14 +102,14 @@ return {
             function()
                 require('fzf-lua').lsp_workspace_diagnostics()
             end,
-            desc = '[D]iagnostics: [p]roject'
+            desc = '[D]iagnostics: [p]roject',
         },
         {
             '<leader>df',
             function()
                 require('fzf-lua').lsp_document_diagnostics()
             end,
-            desc = '[D]iagnostics: [f]ile'
+            desc = '[D]iagnostics: [f]ile',
         },
         {
             'gd',
